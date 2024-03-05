@@ -1,0 +1,11 @@
+HOSTNAME = '127.0.0.1'
+PORT     = '3306'
+DATABASE = 'wordle'
+USERNAME = 'root'
+SQLALCHEMY_DATABASE_URI = f'mysql+pymysql://{USERNAME}@{HOSTNAME}:{PORT}/{DATABASE}'
+
+SQLALCHEMY_TRACK_MODIFICATIONS = True
+
+import os
+
+SECRET_KEY = os.urandom(16)

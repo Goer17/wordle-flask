@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block style %}<link rel="stylesheet" href="{{ url_for('static', filename='css/rank.css') }}">{% endblock style %}
+
+{% block content %}
+
+<table class="rank-table">
+    <tr>
+        <th>rank</th>
+        <th>username</th>
+        <th>solved</th>
+        <th>avg. guess</th>
+    </tr>
+    {% for i in range(rank_query | length) %}
+    <tr>
+        <td>{{ i + 1 }}</td>
+        <td>{{ rank_query[i][0] }}</td>
+        <td>{{ rank_query[i][1] }}</td>
+        <td>{{ rank_query[i][2] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock content %}

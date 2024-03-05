@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Register{% endblock title %}
+
+{% block style %}<link rel="stylesheet", href="{{ url_for('static', filename='css/auth.css') }}">{% endblock style %}
+
+{% block content %}
+<form action="" method="post">
+    <input type="text" name="username" placeholder="User name"><br>
+    <input type="password" name="password" placeholder="Password"><br>
+    <input type="password" name="confirm" placeholder="Confirm your password"></input>
+    <input type="submit" name="submit" value="Submit">
+</from>
+{% endblock content %}

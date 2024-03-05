@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Index{% endblock title %}
+
+{% block script %}
+<script type="text/javascript">
+    var focus = {{ focus }};
+    var rec = {{ rec | tojson }};
+</script>
+{% endblock script %}
+
+{% block style %}<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">{% endblock style %}
+
+{% block content %}
+{% if uid %}
+<form action="" id="wordle-block" method="post">
+    {% for i in range(6) %}
+    <div class="wordle-grid">
+        {% for j in range(5) %}
+        <input class="wordle-cell" type="text" name="cell-{{ i }}-{{ j }}" maxlength="1" style="background-color: {{ grid_color[i][j].value }}" {% if i != focus %}disabled{% endif %} value="{{ rec[i][j] }}">
+        {% endfor %}
+    </div>
+    {% endfor %}
+</form>
+<div class="keyboard">
+    {% for i in range(keyboard | length) %}
+    <div class="keyboard-row">
+        {% for j in range(keyboard[i] | length) %}
+        <div class="key" style="background-color: {{ keyboard[i][j][1].value }}">
+            {{ keyboard[i][j][0] | upper }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+</div>
+<script src="{{ url_for('static', filename='js/game.js') }}"></script>
+{% else %}
+<h1>Please Login first...</h1>
+{% endif %}
+{% endblock content %}

@@ -1,0 +1,37 @@
+.rank-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-family: 'Arial', sans-serif;
+    margin: 20px 0;
+}
+
+.rank-table th,
+.rank-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.rank-table th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.rank-table tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.rank-table tr:hover {
+    background-color: #e8e8e8;
+}
+
+@media screen and (max-width: 600px) {
+    .rank-table th,
+    .rank-table td {
+        display: block;
+        width: 100%;
+    }
+    .rank-table th {
+        text-align: center;
+    }
+}
