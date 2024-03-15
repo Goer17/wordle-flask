@@ -10,8 +10,3 @@ SQLALCHEMY_TRACK_MODIFICATIONS = True
 import os
 
 SECRET_KEY = os.urandom(16)
-
-# APP
-DEBUG = False
-HOSTNAME = '0.0.0.0'
-PORT = 5000
