@@ -10,3 +10,5 @@ This implementation of the Wordle game, developed using Flask and MySQL, offers 
 docker-compose build && docker-compose up
 ```
 
+Now you can browse to http://127.0.0.1:8080 to connect to wordle app.
+

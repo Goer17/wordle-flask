@@ -52,3 +52,11 @@ def register():
         user = User.query.filter_by(username=username).first()
         
         return redirect(url_for('auth.login'))
+    
+
+@bp.route('/logout')
+def logout():
+    session.pop('uid')
+    session.pop('username')
+    
+    return redirect(url_for('index.index'))

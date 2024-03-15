@@ -18,8 +18,8 @@
     {% endif %}
     <div class="header">
         {% if uid and username %}
-        <a class="username" href=''>{{ username }}</a>
-        <a class="logout" href=''>Logout</a>
+        <a class="username" href='#'>{{ username }}</a>
+        <a class="logout" href='/auth/logout'>Logout</a>
         {% else %}
         <a class="login" href='/auth/login'>Login</a>
         <a class="register" href='/auth/register'>Register</a>
